@@ -1,0 +1,59 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
+
+public class CameraControl : MonoBehaviour
+{
+    public GameObject bulletObj;
+    public float firepower = 1500f;
+    float rX = 0f;
+    float rY = 0f;
+    float sens = 1f;
+    RaycastHit hit;
+    bool isDirty = false;
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        //sens = PlayerPrefs.GetFloat("Sens", 1.0f);
+    }
+
+    void Update()
+    {
+        // used an online YouTube guide to track camera with mouse
+        rY += Input.GetAxis("Mouse X") * sens;
+        rX += Input.GetAxis("Mouse Y") * -1 * sens;
+        transform.localEulerAngles = new Vector3(rX, rY, 0);
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            if (Time.timeScale == 1 && isDirty == true)
+            {
+                Shoot();
+            }
+            else
+            {
+                isDirty = true;
+            }
+        }
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            //pausemenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
+
+    void Shoot()
+    {
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 50f))
+        {
+            //Debug.Log("looking at " + hit.collider.gameObject.name);
+        }
+        GameObject newBullet = Instantiate(bulletObj, transform.position, transform.rotation);
+        newBullet.GetComponent<Rigidbody>().AddRelativeForce(0, 0, firepower);
+        Destroy(newBullet, 2f);
+    }
+}
