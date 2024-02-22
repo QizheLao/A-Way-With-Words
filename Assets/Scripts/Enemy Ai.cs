@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyAi : MonoBehaviour
 {
+    // script referenced from Module 1 (Jeevi)
     public float health;
     public float damage = 5;
     public NavMeshAgent agent;
