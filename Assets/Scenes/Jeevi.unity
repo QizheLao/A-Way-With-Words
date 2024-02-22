@@ -728,7 +728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4834202537597855089, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
       propertyPath: timeBetweenAttacks
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6701262339741692116, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
       propertyPath: m_LocalScale.x
