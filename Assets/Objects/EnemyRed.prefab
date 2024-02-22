@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4834202537597855089}
   m_Layer: 0
   m_Name: EnemyRed
-  m_TagString: Player
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,5 +154,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   bulletObj: {fileID: 2709499544528065658, guid: 68f9c207fc5a770468525e19b2fad246, type: 3}
-  attackRange: 3
-  timeBetweenAttacks: 2
+  attackRange: 6
+  timeBetweenAttacks: 0

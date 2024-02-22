@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyAi : MonoBehaviour
 {
+    // script referenced from my Module 1 Project (Jeevi) 
     public float health;
     public float damage = 5;
     public NavMeshAgent agent;
@@ -18,7 +19,7 @@ public class EnemyAi : MonoBehaviour
 
     private void Start()
     {
-        health = Random.Range(5, 10 + 1);
+        health = Random.Range(health / 2 , health + 1);
     }
     public void Initialize(float startingHealth)
     {
@@ -41,7 +42,7 @@ public class EnemyAi : MonoBehaviour
     }
     private void Awake()
     {
-        player = GameObject.Find("PlayerObj").transform;
+        player = GameObject.Find("player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
     private void Update()

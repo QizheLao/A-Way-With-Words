@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class CameraControl : MonoBehaviour
 {
+    // script referenced from Module 1 (Jeevi)
     public GameObject bulletObj;
     public float firepower = 1500f;
     float rX = 0f;
@@ -50,7 +51,7 @@ public class CameraControl : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.forward, out hit, 50f))
         {
-            //Debug.Log("looking at " + hit.collider.gameObject.name);
+            Debug.Log("looking at " + hit.collider.gameObject.name);
         }
         GameObject newBullet = Instantiate(bulletObj, transform.position, transform.rotation);
         newBullet.GetComponent<Rigidbody>().AddRelativeForce(0, 0, firepower);
