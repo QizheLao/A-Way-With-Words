@@ -5,12 +5,12 @@ using UnityEngine.AI;
 
 public class EnemyAi : MonoBehaviour
 {
-    // script referenced from my Module 1 Project (Jeevi) 
     public float health;
     public float damage = 5;
     public NavMeshAgent agent;
     public Transform player;
     public bool chaseForever = false;
+    public bool isRanged = false;
     public LayerMask whatIsPlayer;
     public GameObject bulletObj;
     public float attackRange;
@@ -19,7 +19,7 @@ public class EnemyAi : MonoBehaviour
 
     private void Start()
     {
-        health = Random.Range(health / 2 , health + 1);
+        health = Random.Range(health / 2, health + 1);
     }
     public void Initialize(float startingHealth)
     {
@@ -47,7 +47,6 @@ public class EnemyAi : MonoBehaviour
     }
     private void Update()
     {
-        // Check if player is within attack range
         RaycastHit hit;
         if (Physics.Raycast(transform.position, player.position - transform.position, out hit, attackRange, whatIsPlayer))
         {
@@ -55,7 +54,10 @@ public class EnemyAi : MonoBehaviour
             {
                 ChasePlayer();
             }
-            //AttackPlayer(); // Consider moving this logic to a separate method if needed
+            if (isRanged)
+            {
+                AttackPlayer();
+            }
         }
     }
     private void ChasePlayer()
@@ -72,7 +74,7 @@ public class EnemyAi : MonoBehaviour
         {
             GameObject newBullet = Instantiate(bulletObj, transform.position, transform.rotation);
             newBullet.GetComponent<Rigidbody>().AddRelativeForce(0, 0, 1500f);
-            Destroy(newBullet, 5f);
+            Destroy(newBullet, 1f);
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }

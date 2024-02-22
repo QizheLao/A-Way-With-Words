@@ -145,6 +145,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1344727742}
+    - target: {fileID: 4834202537597855089, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
+      propertyPath: isRanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834202537597855089, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6701262339741692116, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.8739586
@@ -459,6 +467,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1344727742}
+    - target: {fileID: 4834202537597855089, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
+      propertyPath: isRanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6701262339741692116, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.7541409
@@ -525,6 +537,10 @@ PrefabInstance:
     - target: {fileID: 2522231629778103187, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
       propertyPath: m_Name
       value: EnemyRed (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834202537597855089, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
+      propertyPath: isRanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6701262339741692116, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -676,7 +692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d16fabbaa87ca4ca7265f1200b3ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletObj: {fileID: 2709499544528065658, guid: 68f9c207fc5a770468525e19b2fad246, type: 3}
+  bulletObj: {fileID: 2709499544528065658, guid: 494c4cdb71eff6842bda44cebff0b071, type: 3}
   firepower: 1500
 --- !u!1001 &1084376323
 PrefabInstance:
@@ -787,6 +803,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1344727742}
+    - target: {fileID: 4834202537597855089, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6701262339741692116, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.174141
@@ -1498,6 +1518,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1344727742}
+    - target: {fileID: 4834202537597855089, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6701262339741692116, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.635689
@@ -1910,6 +1934,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1344727742}
+    - target: {fileID: 4834202537597855089, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
+      propertyPath: isRanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834202537597855089, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6701262339741692116, guid: 5dac7b688a7aaf0438adbe9d68481f5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.031066
