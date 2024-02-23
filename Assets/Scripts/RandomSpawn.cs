@@ -34,7 +34,7 @@ public class RandomSpawn : MonoBehaviour
             Vector3 spawnLocation = spawnLocations[spawnLocationIndex];
 
             Instantiate(letter, spawnLocation, Quaternion.identity);
-
+            
             // Remove the used index from the unused list
             unusedIndices.RemoveAt(randomIndex);
         }
