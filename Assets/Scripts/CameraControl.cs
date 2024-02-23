@@ -46,7 +46,6 @@ public class CameraControl : MonoBehaviour
             Time.timeScale = 0;
         }
     }
-
     void Shoot()
     {
         if (Physics.Raycast(transform.position, transform.forward, out hit, 50f))
@@ -57,4 +56,5 @@ public class CameraControl : MonoBehaviour
         newBullet.GetComponent<Rigidbody>().AddRelativeForce(0, 0, firepower);
         Destroy(newBullet, 2f);
     }
+
 }
