@@ -23,7 +23,7 @@ public class Gun : MonoBehaviour
 
     //Reference
     public Camera fpsCam;
-    public Transform attackPoint;
+    public Transform attackPoint, cam;
 
     //Graphics
     public GameObject muzzleFlash;
@@ -45,7 +45,7 @@ public class Gun : MonoBehaviour
 
         //Set ammo display, if it exists :D
         if (ammunitionDisplay != null)
-            ammunitionDisplay.SetText(bulletsLeft / bulletsPerTap + " / " + magazineSize / bulletsPerTap);
+            ammunitionDisplay.SetText("Ammo: " + bulletsLeft / bulletsPerTap + " / " + magazineSize / bulletsPerTap);
     }
     private void MyInput()
     {
@@ -72,6 +72,7 @@ public class Gun : MonoBehaviour
     {
         readyToShoot = false;
 
+        attackPoint.rotation = cam.rotation;
         //Find the exact hit position using a raycast
         Ray ray = fpsCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); //Just a ray through the middle of your current view
         RaycastHit hit;
@@ -104,7 +105,12 @@ public class Gun : MonoBehaviour
 
         //Instantiate muzzle flash, if you have one
         if (muzzleFlash != null)
-            Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
+        {
+            GameObject flash = Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
+            // Destroy the instantiated muzzle flash after 0.1 seconds
+            Destroy(flash, 0.1f);
+        }
+
 
         bulletsLeft--;
         bulletsShot++;

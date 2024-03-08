@@ -28,7 +28,7 @@ public class CameraControl : MonoBehaviour
         rX += Input.GetAxis("Mouse Y") * -1 * sens;
         transform.localEulerAngles = new Vector3(rX, rY, 0);
 
-        if (Input.GetButtonDown("Fire1"))
+        /*if (Input.GetButtonDown("Fire1"))
         {
             if (Time.timeScale == 1 && isDirty == true)
             {
@@ -38,7 +38,7 @@ public class CameraControl : MonoBehaviour
             {
                 isDirty = true;
             }
-        }
+        }*/
         if (Input.GetButtonDown("Cancel"))
         {
             Cursor.lockState = CursorLockMode.None;
