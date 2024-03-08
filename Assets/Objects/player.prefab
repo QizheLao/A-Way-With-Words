@@ -177,6 +177,7 @@ MonoBehaviour:
   allowButtonHold: 0
   fpsCam: {fileID: 0}
   attackPoint: {fileID: 0}
+  cam: {fileID: 0}
   muzzleFlash: {fileID: 0}
   ammunitionDisplay: {fileID: 0}
   allowInvoke: 1
@@ -211,7 +212,8 @@ Transform:
   m_LocalPosition: {x: -0.01, y: 0.6, z: -0.22}
   m_LocalScale: {x: 1.54691, y: 1.54691, z: 1.54691}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 468869456877635330}
   m_Father: {fileID: 1579760750481106578}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1041424476984653629
@@ -287,3 +289,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletObj: {fileID: 2709499544528065658, guid: 494c4cdb71eff6842bda44cebff0b071, type: 3}
   firepower: 2000
+--- !u!1 &3384373286622605945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 468869456877635330}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &468869456877635330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3384373286622605945}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.18, y: -0.113, z: 0.85}
+  m_LocalScale: {x: 0.64645, y: 0.64645, z: 0.64645}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1025075101195138512}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
