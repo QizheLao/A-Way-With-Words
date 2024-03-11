@@ -102,6 +102,7 @@ public class Gun : MonoBehaviour
         //Add forces to bullet
         currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
         currentBullet.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
+        Destroy(currentBullet, 2f);
 
         //Instantiate muzzle flash, if you have one
         if (muzzleFlash != null)
