@@ -165,20 +165,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e2fe0309eb7f349ad9960c9d06269f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  shootForce: 0
+  bullet: {fileID: 2709499544528065658, guid: 494c4cdb71eff6842bda44cebff0b071, type: 3}
+  shootForce: 100
   upwardForce: 0
-  timeBetweenShooting: 0
+  timeBetweenShooting: 0.1
   spread: 0
-  reloadTime: 0
+  reloadTime: 2
   timeBetweenShots: 0
-  magazineSize: 0
-  bulletsPerTap: 0
-  allowButtonHold: 0
-  fpsCam: {fileID: 0}
-  attackPoint: {fileID: 0}
-  cam: {fileID: 0}
-  muzzleFlash: {fileID: 0}
+  magazineSize: 100
+  bulletsPerTap: 1
+  allowButtonHold: 1
+  fpsCam: {fileID: 1041424476984653629}
+  attackPoint: {fileID: 468869456877635330}
+  cam: {fileID: 1025075101195138512}
+  muzzleFlash: {fileID: 1743301284569550, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
   ammunitionDisplay: {fileID: 0}
   allowInvoke: 1
 --- !u!1 &2938474198923459483
@@ -287,8 +287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d16fabbaa87ca4ca7265f1200b3ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletObj: {fileID: 2709499544528065658, guid: 494c4cdb71eff6842bda44cebff0b071, type: 3}
-  firepower: 2000
 --- !u!1 &3384373286622605945
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +312,7 @@ Transform:
   m_GameObject: {fileID: 3384373286622605945}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.18, y: -0.113, z: 0.85}
+  m_LocalPosition: {x: 0, y: -0.113, z: 2.04}
   m_LocalScale: {x: 0.64645, y: 0.64645, z: 0.64645}
   m_ConstrainProportionsScale: 0
   m_Children: []
