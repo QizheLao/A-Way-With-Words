@@ -2960,6 +2960,10 @@ PrefabInstance:
       propertyPath: timeBetweenShooting
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8949160399594889786, guid: 1d8d172a9c4ff27489c286e97f740469, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

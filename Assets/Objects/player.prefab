@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4222225683178912904}
   - component: {fileID: 2961108421962141720}
   - component: {fileID: 4300432776390279094}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: player
   m_TagString: player
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2796761782167540433}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -5495902117074765545, guid: 34b020b25174f5849a9eb4cfc9334a1f, type: 3}
 --- !u!23 &703372955347072293
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 1041424476984653629}
   - component: {fileID: 795537568941792880}
   - component: {fileID: 3112550884791841293}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 468869456877635330}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
