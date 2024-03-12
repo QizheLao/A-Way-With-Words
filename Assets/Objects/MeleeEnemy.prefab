@@ -151,9 +151,14 @@ MonoBehaviour:
   player: {fileID: 0}
   chaseForever: 1
   isRanged: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
   bulletObj: {fileID: 2709499544528065658, guid: 68f9c207fc5a770468525e19b2fad246, type: 3}
   attackRange: 4
   timeBetweenAttacks: 0
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 0

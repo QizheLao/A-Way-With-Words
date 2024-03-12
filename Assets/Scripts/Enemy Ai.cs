@@ -7,29 +7,20 @@ public class EnemyAi : MonoBehaviour
 {
     // script referenced from Module 1 (Jeevi)
     public float health;
-    public float damage = 5;
+    public float damage = 2;
     public NavMeshAgent agent;
     public Transform player;
     public bool chaseForever = false;
     public bool isRanged = false;
-    public LayerMask whatIsPlayer;
+    public LayerMask whatIsGround, whatIsPlayer;
     public GameObject bulletObj;
     public float attackRange;
     public float timeBetweenAttacks;
     bool alreadyAttacked;
-
-    public static int totalEnemies = 32;
-
-    private void Start()
-    {
-      GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
-      totalEnemies = enemies.Length;
-      health = Random.Range(health / 2, health + 1);
-    }
-    public void Initialize(float startingHealth)
-    {
-        health = startingHealth;
-    }
+    public Vector3 walkPoint;
+    bool walkPointSet;
+    public float walkPointRange;
+    public bool dead;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "bullet")
@@ -42,32 +33,62 @@ public class EnemyAi : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
-            totalEnemies = enemies.Length;
-          //Debug.Log("totalEnemies: " + totalEnemies);
-
-            Destroy(gameObject,0f);
+            gameObject.SetActive(false);
+            dead = true;
         }
     }
     private void Awake()
     {
         player = GameObject.Find("player").transform;
         agent = GetComponent<NavMeshAgent>();
+        dead = false;
     }
     private void Update()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, player.position - transform.position, out hit, attackRange, whatIsPlayer))
+        if(!dead)
         {
-            if (chaseForever)
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, player.position - transform.position, out hit, attackRange, whatIsPlayer))
             {
-                ChasePlayer();
+                if (chaseForever)
+                {
+                    ChasePlayer();
+                }
+                if (isRanged)
+                {
+                    AttackPlayer();
+                }
             }
-            if (isRanged)
+
+            else
             {
-                AttackPlayer();
+                Patroling();
             }
         }
+    }
+    private void Patroling()
+    {
+        if (!walkPointSet) SearchWalkPoint();
+
+        if (walkPointSet)
+            agent.SetDestination(walkPoint);
+
+        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+
+        //Walkpoint reached
+        if (distanceToWalkPoint.magnitude < 2f)
+            walkPointSet = false;
+    }
+    private void SearchWalkPoint()
+    {
+        //Calculate random point in range
+        float randomZ = Random.Range(-walkPointRange, walkPointRange);
+        float randomX = Random.Range(-walkPointRange, walkPointRange);
+
+        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+
+        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+            walkPointSet = true;
     }
     private void ChasePlayer()
     {

@@ -3,56 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 public class RoomAI : MonoBehaviour
 {
-    public GameObject enterDoor;
-    public GameObject exitDoor;
-    public GameObject exitDoor2;
-    public bool doors;
+    public EnemyPool pool;
+    public List<GameObject> doors;
+    public bool cleared = false;
+    public bool spawned = false;
 
-    private bool playerExited = false;
-    private int enemyAlive;
-    private void OnTriggerEnter(Collider other)
-    {
-        playerExited = false;
-        //ebug.Log("object:" + other.tag);
-        enemyAlive = EnemyAi.totalEnemies;
-        if (other.CompareTag("player") && !playerExited)
-        {
-
-           enemyAlive = EnemyAi.totalEnemies - 5;
-
-         //Debug.Log("enemyAlive: " + enemyAlive);
-            playerExited = true;
-            CloseEnterDoor();
-        }
-    }
     private void Update()
     {
-        UpdateEnemyCount();
-    }
-    private void CloseEnterDoor()
-    {
-        enterDoor.SetActive(true);
-    }
-
-    private void UpdateEnemyCount()
-    {
-        //Debug.Log("enemyAlive: " + enemyAlive);
-      //Debug.Log("totalEnemies: " + EnemyAi.totalEnemies);
-        if (EnemyAi.totalEnemies <= enemyAlive && playerExited)
+        if(!pool.AnyActiveEnemies())
         {
-            OpenExitDoor();
+            OpenDoor();
         }
     }
-    private void OpenExitDoor()
+    public void CloseDoor()
     {
-        enemyAlive = EnemyAi.totalEnemies - 5;
-      //Debug.Log("enemyAlive next: " + enemyAlive);
-      //Debug.Log("Cleared Room");
-        if (doors)
+        foreach (GameObject door in doors)
         {
-            exitDoor2.SetActive(false);
-
+            door.SetActive(true);
         }
-        exitDoor.SetActive(false);
+
+        pool.SpawnEnemies();
+    }
+
+    private void OpenDoor()
+    {
+        foreach (GameObject door in doors)
+        {
+            door.SetActive(false);
+        }
+        cleared = true;
     }
 }

@@ -5,9 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public string Scene;
+    //public string Scene;
     public GameObject pausemenu;
-    private void OnTriggerEnter(Collider other)
+    public static bool isPaused;
+    void Start()
+    {
+        if(pausemenu != null)
+        {
+            pausemenu.SetActive(false);
+        }
+        isPaused = false;
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(!isPaused)
+            {
+                Pause();
+            }
+        }
+    }
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
@@ -15,16 +35,25 @@ public class MainMenu : MonoBehaviour
             SceneManager.LoadScene(Scene);
         }
 
-    }
+    }*/
     public void Load(string Scene)
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
+        isPaused = false;
         SceneManager.LoadScene(Scene);
+    }
+    public void Pause()
+    {
+        pausemenu.SetActive(true);
+        isPaused = true;
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
     }
     public void Resume()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         pausemenu.SetActive(false);
-        Time.timeScale = 1;
+        isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
     }
 }
