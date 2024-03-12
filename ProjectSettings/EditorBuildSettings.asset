@@ -11,14 +11,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Option.unity
     guid: f9d181cbcddb7c64d83c05f9c8db6ec6
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+  - enabled: 0
+    path: Assets/Scenes/Testing/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/Jeevi.unity
+  - enabled: 0
+    path: Assets/Scenes/Testing/Jeevi.unity
     guid: 74fe0264708c8bd478e9b2f361989f05
-  - enabled: 1
-    path: Assets/Scenes/Dash.unity
+  - enabled: 0
+    path: Assets/Scenes/Testing/Dash.unity
     guid: d301d2cf6c9e35045b59b14811ea214c
   - enabled: 1
     path: Assets/Scenes/Win.unity

@@ -9,6 +9,7 @@ TagManager:
   - enemy
   - word
   - megaboy
+  - door
   layers:
   - Default
   - TransparentFX
