@@ -18,9 +18,13 @@ public class EnemyAi : MonoBehaviour
     public float timeBetweenAttacks;
     bool alreadyAttacked;
 
+    public static int totalEnemies = 32;
+
     private void Start()
     {
-        health = Random.Range(health / 2, health + 1);
+      GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
+      totalEnemies = enemies.Length;
+      health = Random.Range(health / 2, health + 1);
     }
     public void Initialize(float startingHealth)
     {
@@ -38,7 +42,11 @@ public class EnemyAi : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
-            gameObject.SetActive(false);
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
+            totalEnemies = enemies.Length;
+          //Debug.Log("totalEnemies: " + totalEnemies);
+
+            Destroy(gameObject,0f);
         }
     }
     private void Awake()
