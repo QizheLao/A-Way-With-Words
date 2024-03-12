@@ -41,11 +41,14 @@ public class Gun : MonoBehaviour
 
     private void Update()
     {
+        if(!MainMenu.isPaused)
+        {
         MyInput();
 
         //Set ammo display, if it exists :D
         if (ammunitionDisplay != null)
             ammunitionDisplay.SetText("Ammo: " + bulletsLeft / bulletsPerTap + " / " + magazineSize / bulletsPerTap);
+        }
     }
     private void MyInput()
     {

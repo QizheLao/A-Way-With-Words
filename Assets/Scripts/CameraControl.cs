@@ -14,21 +14,17 @@ public class CameraControl : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        //sens = PlayerPrefs.GetFloat("Sens", 1.0f);
+        sens = PlayerPrefs.GetFloat("Sens", 1.0f);
     }
 
     void Update()
     {
+        if (!MainMenu.isPaused)
+        {
         // used an online YouTube guide to track camera with mouse
         rY += Input.GetAxis("Mouse X") * sens;
         rX += Input.GetAxis("Mouse Y") * -1 * sens;
         transform.localEulerAngles = new Vector3(rX, rY, 0);
-
-        if (Input.GetButtonDown("Cancel"))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            //pausemenu.SetActive(true);
-            //Time.timeScale = 0;
         }
     }
 }

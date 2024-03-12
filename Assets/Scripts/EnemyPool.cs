@@ -3,32 +3,77 @@ using UnityEngine;
 
 public class EnemyPool : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public GameObject enemyPrefabMelee;
+    public GameObject enemyPrefabRange;
+    public GameObject boss;
     public int poolSize = 5;
 
-    private List<GameObject> pooledEnemies = new List<GameObject>();
-
-    private void Start()
+    public List<GameObject> pool;
+    public Vector3[] spawnPositions;
+    void Start()
     {
-        // Populate the enemy pool
+        InitializePool();
+    }
+
+    void InitializePool()
+    {
+        pool = new List<GameObject>();
+
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-            enemy.SetActive(false);
-            pooledEnemies.Add(enemy);
+            GameObject obj;
+            Vector3 spawnPosition = spawnPositions[i];
+            Debug.Log(spawnPosition);
+
+            if (boss != null && i == poolSize - 1)
+            {
+                obj = Instantiate(boss, spawnPosition, Quaternion.identity);
+            }
+            else
+            {
+                int randomIndex = Random.Range(0, 2);
+                obj = Instantiate(randomIndex == 0 ? enemyPrefabMelee : enemyPrefabRange, spawnPosition, Quaternion.identity);
+            }
+            
+            obj.SetActive(false);
+            pool.Add(obj);
         }
     }
 
-    // Method to get an inactive enemy from the pool
-    public GameObject GetPooledEnemy()
+    public GameObject GetPooledObject()
     {
-        foreach (GameObject enemy in pooledEnemies)
+        for (int i = 0; i < pool.Count; i++)
         {
-            if (!enemy.activeInHierarchy)
+            if (!pool[i].activeInHierarchy)
             {
-                return enemy;
+                return pool[i];
             }
         }
-        return null; // No inactive enemy found
+
+        return null;
+    }
+
+    public bool AnyActiveEnemies()
+    {
+        foreach (GameObject enemy in pool)
+        {
+            if (enemy.activeInHierarchy)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    public void SpawnEnemies()
+    {
+        for (int i = 0; i < poolSize; i++)
+        {
+            GameObject enemyObject = GetPooledObject();
+            if (enemyObject != null)
+            {
+                // Activate the enemyObject
+                enemyObject.SetActive(true);
+            }
+        }
     }
 }
