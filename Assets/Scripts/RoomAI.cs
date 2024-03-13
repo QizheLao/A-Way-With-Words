@@ -5,15 +5,24 @@ public class RoomAI : MonoBehaviour
 {
     public EnemyPool pool;
     public List<GameObject> doors;
-    public bool cleared = false;
-    public bool spawned = false;
+    public bool cleared;
+    public bool spawned;
 
+    void Start()
+    {
+        cleared = false;
+        spawned = false;
+    }
     private void Update()
     {
-        if(!pool.AnyActiveEnemies())
+        if(spawned)
         {
-            OpenDoor();
+            if(!pool.AnyActiveEnemies())
+            {
+                OpenDoor();
+            }
         }
+        
     }
     public void CloseDoor()
     {
@@ -22,6 +31,7 @@ public class RoomAI : MonoBehaviour
             door.SetActive(true);
         }
 
+        spawned = true;
         pool.SpawnEnemies();
     }
 
