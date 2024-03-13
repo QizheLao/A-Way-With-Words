@@ -8,7 +8,7 @@ public class RoomTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log(other.tag);
-        if (other.CompareTag("player") && !room.cleared && !room.spawned)
+        if (other.CompareTag("player"))
         {
             Debug.Log(other.tag);
             room.CloseDoor();

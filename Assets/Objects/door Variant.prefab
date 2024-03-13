@@ -13,6 +13,10 @@ PrefabInstance:
       value: door Variant
       objectReference: {fileID: 0}
     - target: {fileID: 179268, guid: cd55e245d3cf33c4dab2e9577a37bbcc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 179268, guid: cd55e245d3cf33c4dab2e9577a37bbcc, type: 3}
       propertyPath: m_TagString
       value: door
       objectReference: {fileID: 0}
@@ -26,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 476522, guid: cd55e245d3cf33c4dab2e9577a37bbcc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.04
+      value: 38.24
       objectReference: {fileID: 0}
     - target: {fileID: 476522, guid: cd55e245d3cf33c4dab2e9577a37bbcc, type: 3}
       propertyPath: m_LocalPosition.y
