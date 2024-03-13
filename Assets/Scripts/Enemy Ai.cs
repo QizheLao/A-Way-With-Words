@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class EnemyAi : MonoBehaviour
 {
@@ -33,6 +34,11 @@ public class EnemyAi : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
+            if (gameObject.tag == "megaboy")
+            {
+                Cursor.lockState = CursorLockMode.None;
+                SceneManager.LoadScene("Win");
+            }
             gameObject.SetActive(false);
             dead = true;
         }

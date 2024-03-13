@@ -5,7 +5,7 @@ using UnityEngine;
 public class RoomTrigger : MonoBehaviour
 {
     public RoomAI room;
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         //Debug.Log(other.tag);
         if (other.CompareTag("player"))

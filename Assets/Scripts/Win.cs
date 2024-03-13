@@ -5,10 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Win : MonoBehaviour
 {
-    private void OnDestroy() // not working 
-    {
-        SceneManager.LoadScene("Win");
-    }
     private void OnTriggerEnter(Collider other) // temperoy
     {
         if (other.gameObject.tag == "bullet")
