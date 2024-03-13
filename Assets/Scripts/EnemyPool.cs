@@ -23,7 +23,7 @@ public class EnemyPool : MonoBehaviour
         {
             GameObject obj;
             Vector3 spawnPosition = spawnPositions[i];
-            Debug.Log(spawnPosition);
+            //Debug.Log(spawnPosition);
 
             if (boss != null && i == poolSize - 1)
             {
