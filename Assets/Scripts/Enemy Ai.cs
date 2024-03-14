@@ -8,27 +8,21 @@ public class EnemyAi : MonoBehaviour
 {
     // script referenced from Module 1 (Jeevi)
     public float health;
-    public float damage = 2;
     public NavMeshAgent agent;
     public Transform player;
     public bool chaseForever = false;
     public bool isRanged = false;
     public LayerMask whatIsGround, whatIsPlayer;
     public GameObject bulletObj;
-    public float attackRange;
+    public float attackRange, sightRange;
     public float timeBetweenAttacks;
     bool alreadyAttacked;
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
     public bool dead;
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "bullet")
-        {
-            TakeDamage(damage);
-        }
-    }
+    public bool playerInSightRange, playerInAttackRange;
+
     public void TakeDamage(float amount)
     {
         health -= amount;
@@ -59,7 +53,18 @@ public class EnemyAi : MonoBehaviour
         if(!dead)
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, player.position - transform.position, out hit, attackRange, whatIsPlayer))
+            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+            playerInAttackRange = Physics.Raycast(transform.position, player.position - transform.position, out hit, attackRange, whatIsPlayer);
+            if(!playerInSightRange && !playerInAttackRange)
+            {
+                Patroling();
+            }
+            else if (playerInSightRange && !playerInAttackRange)
+            {
+                ChasePlayer();
+            }
+
+            else
             {
                 if (chaseForever)
                 {
@@ -69,11 +74,6 @@ public class EnemyAi : MonoBehaviour
                 {
                     AttackPlayer();
                 }
-            }
-
-            else
-            {
-                Patroling();
             }
         }
     }
