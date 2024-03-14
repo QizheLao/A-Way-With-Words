@@ -12,13 +12,20 @@ public class Words : MonoBehaviour
     {
         if (other.gameObject.CompareTag("player"))
         {
-            collectedWords++;
-            //Debug.Log("Words Collected: " + collectedWords);
-            wordText.text = collectedWords.ToString();
-            Destroy(gameObject);
-            if (collectedWords >= 5)
+            if (gameObject.tag == "healthpack")
             {
-                SceneManager.LoadScene("OuterDemo");
+                Destroy(gameObject);
+            }
+            else
+            {
+                collectedWords++;
+                //Debug.Log("Words Collected: " + collectedWords);
+                wordText.text = collectedWords.ToString();
+                Destroy(gameObject);
+                if (collectedWords >= 5)
+                {
+                    SceneManager.LoadScene("OuterDemo");
+                }
             }
         }
     }

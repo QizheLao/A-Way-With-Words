@@ -10,6 +10,8 @@ TagManager:
   - word
   - megaboy
   - door
+  - enemybullet
+  - healthpack
   layers:
   - Default
   - TransparentFX
