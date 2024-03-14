@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour
         if (explosion != null) 
         {
             GameObject explosions = Instantiate(explosion, transform.position, Quaternion.identity);
-            Destroy(explosions, 2f);
+            Destroy(explosions, 1.5f);
         }
         //Check for enemies 
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, whatIsEnemies);
