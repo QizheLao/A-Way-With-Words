@@ -12,6 +12,9 @@ public class PlayerControl : MonoBehaviour
     public float jumpForce = 2f;
     public float gravity = -9.81f;
     public LayerMask groundLayer;
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    bool isGrounded;
 
     // referenced from module 1 - Jeevi
     private Vector3 velocity;
@@ -29,32 +32,28 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer);
 
-        // tracking camera direction to move accordly
-        Vector3 forward = cameraTransform.forward;
-        Vector3 right = cameraTransform.right;
-        forward.y = 0f;
-        right.y = 0f;
-        forward.Normalize();
-        right.Normalize();
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
 
-        Vector3 movement = forward * verticalInput + right * horizontalInput;
-        // sprinting
         float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
-        controller.Move(movement.normalized * currentSpeed * Time.deltaTime);
-        // jumping 
-        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+
+        Vector3 move = transform.right * x + transform.forward * z;
+
+        controller.Move(move * currentSpeed * Time.deltaTime);
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
         }
-        // rigid body didnt work..? using own gravity 
+
         velocity.y += gravity * Time.deltaTime;
-        if (controller.isGrounded && velocity.y < 0) // making sure player is always grounded
-        {
-            velocity.y = -2f; 
-        }
+        
         controller.Move(velocity * Time.deltaTime);
     }
     private void OnTriggerEnter(Collider other)
@@ -87,6 +86,6 @@ public class PlayerControl : MonoBehaviour
                 SceneManager.LoadScene("Lose");
             }
         }
-        healthdisplay.text = health.ToString();
+        healthdisplay.text = ("Health: " + health);
     }
 }

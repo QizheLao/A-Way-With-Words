@@ -295,7 +295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4222225683178912904, guid: 1d8d172a9c4ff27489c286e97f740469, type: 3}
       propertyPath: groundLayer.m_Bits
-      value: 64
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 4300432776390279094, guid: 1d8d172a9c4ff27489c286e97f740469, type: 3}
       propertyPath: ammunitionDisplay
@@ -838,6 +838,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d16fabbaa87ca4ca7265f1200b3ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerBody: {fileID: 0}
+  sens: 100
 --- !u!1001 &1019612943
 PrefabInstance:
   m_ObjectHideFlags: 0
