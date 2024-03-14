@@ -20,7 +20,7 @@ public class PlayerControl : MonoBehaviour
     private Vector3 velocity;
     public Transform cameraTransform;
     private CharacterController controller;
-    public int health = 100;
+    public static int health = 100;
     public TextMeshProUGUI healthdisplay;
 
 
