@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3399884}
   - component: {fileID: 2397830}
   - component: {fileID: 6444816}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: stone_bridge_connector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
