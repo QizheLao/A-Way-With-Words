@@ -301,6 +301,14 @@ PrefabInstance:
       propertyPath: groundLayer.m_Bits
       value: 128
       objectReference: {fileID: 0}
+    - target: {fileID: 4243372722601317326, guid: 1d8d172a9c4ff27489c286e97f740469, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.297
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243372722601317326, guid: 1d8d172a9c4ff27489c286e97f740469, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.156
+      objectReference: {fileID: 0}
     - target: {fileID: 4300432776390279094, guid: 1d8d172a9c4ff27489c286e97f740469, type: 3}
       propertyPath: ammunitionDisplay
       value: 

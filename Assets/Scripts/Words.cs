@@ -8,7 +8,17 @@ public class Words : MonoBehaviour
     public static int collectedWords = 0;
     public TextMeshProUGUI wordText;
     public bool Level2;
+    private string sceneName;
 
+    private void Start()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
+        if (sceneName == "Level2Inner")
+        {
+            collectedWords = 0;
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("player"))

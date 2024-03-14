@@ -5,13 +5,13 @@ using UnityEngine;
 public class RoomTrigger : MonoBehaviour
 {
     public RoomAI room;
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         //Debug.Log(other.tag);
         if (other.CompareTag("player"))
         {
             //Debug.Log(other.tag);
-            Destroy(gameObject, 2f);
+            Destroy(gameObject, 0f);
             room.CloseDoor();
         }
     }
