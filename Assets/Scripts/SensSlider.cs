@@ -9,17 +9,15 @@ public class SensSlider : MonoBehaviour
     public Slider slider;
     public TextMeshProUGUI slidertext;
 
+    public static float sens = 1;
+
     private void Start()
     {
-        // referenced from youtube tuterial 
-        slider.value = PlayerPrefs.GetFloat("Sens", 1.0f); // help from chatgbt
-        slidertext.text = slider.value.ToString("0");
-        slider.onValueChanged.AddListener((value) =>
-        {
-            slidertext.text = value.ToString("0");
-            PlayerPrefs.SetFloat("Sens", value);
-
-            Debug.Log(value);
+        slider.value = sens;
+        slidertext.text = sens.ToString("0.00");
+        slider.onValueChanged.AddListener((v) => {
+            slidertext.text = v.ToString("0.00");
+            sens = slider.value;
         });
     }
 }
