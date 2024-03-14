@@ -7,6 +7,7 @@ public class Words : MonoBehaviour
 {
     public static int collectedWords = 0;
     public TextMeshProUGUI wordText;
+    public bool Level2;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,7 +25,11 @@ public class Words : MonoBehaviour
                 Destroy(gameObject);
                 if (collectedWords >= 5)
                 {
-                    SceneManager.LoadScene("OuterDemo");
+                    if (Level2)
+                    {
+                        SceneManager.LoadScene("OuterDemo2");
+                    }
+                    SceneManager.LoadScene("Level2Outer");
                 }
             }
         }

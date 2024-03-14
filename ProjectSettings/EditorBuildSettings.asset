@@ -35,5 +35,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lose.unity
     guid: 6ce7404bc576d2640be1b7177c8df550
+  - enabled: 1
+    path: Assets/Scenes/Level2Inner.unity
+    guid: 5e0c978a17e5ad74583dd5038ac55849
+  - enabled: 1
+    path: Assets/Scenes/Level2Outer.unity
+    guid: 851cfbdb849b3ba41ac397bba906cd22
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

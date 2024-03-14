@@ -12,6 +12,7 @@ TagManager:
   - door
   - enemybullet
   - healthpack
+  - finalboy
   layers:
   - Default
   - TransparentFX

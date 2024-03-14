@@ -10,7 +10,8 @@ public class RoomTrigger : MonoBehaviour
         //Debug.Log(other.tag);
         if (other.CompareTag("player"))
         {
-            Debug.Log(other.tag);
+            //Debug.Log(other.tag);
+            Destroy(gameObject, 2f);
             room.CloseDoor();
         }
     }
