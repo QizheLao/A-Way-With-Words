@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3359392}
   - component: {fileID: 2385126}
   - component: {fileID: 6474956}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: stone_bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
