@@ -26,6 +26,7 @@ public class PlayerControl : MonoBehaviour
 
     void Start()
     {
+        healthdisplay.text = ("Health: " + health);
         controller = GetComponent<CharacterController>();
         cameraTransform = Camera.main.transform;
     }
