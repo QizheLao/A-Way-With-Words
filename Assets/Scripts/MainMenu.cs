@@ -40,6 +40,10 @@ public class MainMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         isPaused = false;
+        if(Scene == "Level1Inner")
+        {
+            PlayerControl.health = 100;
+        }
         SceneManager.LoadScene(Scene);
     }
     public void Pause()
