@@ -110,7 +110,7 @@ public class Gun : MonoBehaviour
         //Instantiate muzzle flash, if you have one
         if (muzzleFlash != null)
         {
-            GameObject flash = Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
+            GameObject flash = Instantiate(muzzleFlash, attackPoint.position, attackPoint.rotation);
             // Destroy the instantiated muzzle flash after 0.1 seconds
             Destroy(flash, 0.1f);
         }
