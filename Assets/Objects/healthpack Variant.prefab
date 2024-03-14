@@ -49,6 +49,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4834692308522590615, guid: f44f46f4da969c64882bc26374892bc8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834692308522590615, guid: f44f46f4da969c64882bc26374892bc8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4f50dea35e7ad3c4692ad09a8283f7a6, type: 2}
@@ -61,7 +65,8 @@ PrefabInstance:
       value: healthpack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3101428474649919920, guid: f44f46f4da969c64882bc26374892bc8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f44f46f4da969c64882bc26374892bc8, type: 3}
