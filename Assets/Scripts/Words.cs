@@ -21,15 +21,18 @@ public class Words : MonoBehaviour
             {
                 collectedWords++;
                 //Debug.Log("Words Collected: " + collectedWords);
-                wordText.text = collectedWords.ToString();
+                wordText.text = ("Words: " + collectedWords + "/5");
                 Destroy(gameObject);
                 if (collectedWords >= 5)
                 {
-                    if (Level2)
+                    if (!Level2)
                     {
-                        SceneManager.LoadScene("OuterDemo2");
+                        SceneManager.LoadScene("OuterDemo");
                     }
-                    SceneManager.LoadScene("Level2Outer");
+                    else
+                    {
+                        SceneManager.LoadScene("Level2Outer");
+                    }
                 }
             }
         }

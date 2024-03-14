@@ -7,24 +7,26 @@ using UnityEngine.SceneManagement;
 
 public class CameraControl : MonoBehaviour
 {
-    // script referenced from Module 1 (Jeevi)
-    float rX = 0f;
-    float rY = 0f;
-    float sens = 1f;
+    public Transform playerBody;
+    float xRotation = 0f;
+    public float sens = 100f;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        sens = PlayerPrefs.GetFloat("Sens", 1.0f);
     }
 
     void Update()
     {
         if (!MainMenu.isPaused)
         {
-        // used an online YouTube guide to track camera with mouse
-        rY += Input.GetAxis("Mouse X") * sens;
-        rX += Input.GetAxis("Mouse Y") * -1 * sens;
-        transform.localEulerAngles = new Vector3(rX, rY, 0);
+            float mouseX = Input.GetAxis("Mouse X") * sens * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * sens * Time.deltaTime;
+
+            xRotation -=mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            playerBody.Rotate(Vector3.up * mouseX);
         }
     }
 }
