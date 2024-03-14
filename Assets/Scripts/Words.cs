@@ -25,6 +25,7 @@ public class Words : MonoBehaviour
                 Destroy(gameObject);
                 if (collectedWords >= 5)
                 {
+                    collectedWords = 0;
                     if (Level2)
                     {
                         SceneManager.LoadScene("Level2Outer");
