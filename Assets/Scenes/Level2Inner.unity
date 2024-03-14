@@ -891,6 +891,10 @@ PrefabInstance:
       value: Temp object
       objectReference: {fileID: 0}
     - target: {fileID: 6059879006653379704, guid: f44f46f4da969c64882bc26374892bc8, type: 3}
+      propertyPath: Level2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6059879006653379704, guid: f44f46f4da969c64882bc26374892bc8, type: 3}
       propertyPath: wordText
       value: 
       objectReference: {fileID: 823431971}

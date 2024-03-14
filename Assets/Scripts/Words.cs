@@ -27,9 +27,12 @@ public class Words : MonoBehaviour
                 {
                     if (Level2)
                     {
-                        SceneManager.LoadScene("OuterDemo2");
+                        SceneManager.LoadScene("Level2Outer");
                     }
-                    SceneManager.LoadScene("Level2Outer");
+                    else
+                    {
+                        SceneManager.LoadScene("OuterDemo");
+                    }
                 }
             }
         }
