@@ -7,7 +7,14 @@ using TMPro;
 public class PlayerControl : MonoBehaviour
 {
     // script referenced from chatgbt
-    public float speed = 5f;
+    public float walkSpeed = 5f;
+    public float runSpeed = 10f;
+    public float jumpForce = 2f;
+    public float gravity = -9.81f;
+    public LayerMask groundLayer;
+
+    // referenced from module 1 - Jeevi
+    private Vector3 velocity;
     public Transform cameraTransform;
     private CharacterController controller;
     public int health = 100;
@@ -32,8 +39,23 @@ public class PlayerControl : MonoBehaviour
         right.y = 0f;
         forward.Normalize();
         right.Normalize();
+
         Vector3 movement = forward * verticalInput + right * horizontalInput;
-        controller.Move(movement.normalized * speed * Time.deltaTime);
+        // sprinting
+        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
+        controller.Move(movement.normalized * currentSpeed * Time.deltaTime);
+        // jumping 
+        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+        }
+        // rigid body didnt work..? using own gravity 
+        velocity.y += gravity * Time.deltaTime;
+        if (controller.isGrounded && velocity.y < 0) // making sure player is always grounded
+        {
+            velocity.y = -2f; 
+        }
+        controller.Move(velocity * Time.deltaTime);
     }
     private void OnTriggerEnter(Collider other)
     {

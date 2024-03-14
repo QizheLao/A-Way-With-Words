@@ -37,6 +37,11 @@ public class EnemyAi : MonoBehaviour
             if (gameObject.tag == "megaboy")
             {
                 Cursor.lockState = CursorLockMode.None;
+                SceneManager.LoadScene("Level2Inner");
+            }
+            else if (gameObject.tag == "finalboy")
+            {
+                Cursor.lockState = CursorLockMode.None;
                 SceneManager.LoadScene("Win");
             }
             gameObject.SetActive(false);
