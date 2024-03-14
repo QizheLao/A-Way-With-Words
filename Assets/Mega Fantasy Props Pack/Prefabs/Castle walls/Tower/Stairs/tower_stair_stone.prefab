@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3371208}
   - component: {fileID: 2393058}
   - component: {fileID: 6444526}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tower_stair_stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
