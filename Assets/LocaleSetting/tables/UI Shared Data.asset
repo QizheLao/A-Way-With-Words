@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI
+  m_TableCollectionNameGuidString: 8fb821dd3fc10764f82cedb92d64d2b2
+  m_Entries:
+  - m_Id: 733391491072
+    m_Key: MainMenu_Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6041463558144
+    m_Key: MainMenu_Option
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7299322744832
+    m_Key: MainMenu_Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9219366064128
+    m_Key: CreditsMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10747300679680
+    m_Key: CreditsMenu_Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11421702819840
+    m_Key: CreditMenu_Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12565829259264
+    m_Key: OptionMenu_Option
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12988732542976
+    m_Key: OptionMenu_Sensitivity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13508004155392
+    m_Key: OptionMenu_Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15519596548096
+    m_Key: Inner1_Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15953845424128
+    m_Key: Inner1_Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16460597039104
+    m_Key: Inner1_Ammo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16937673953280
+    m_Key: Inner1_Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17232395112448
+    m_Key: Inner1_Words
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28211984076800
+    m_Key: Inner2_Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28543967432704
+    m_Key: Inner2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29217019006976
+    m_Key: Inner2_Ammo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29564122828800
+    m_Key: Inner2_Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29915869745152
+    m_Key: Inner2_Words
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30885580247040
+    m_Key: Outer2_Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31171992489984
+    m_Key: Outer2_Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31593641676800
+    m_Key: Outer2_Ammo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31921267150848
+    m_Key: Outer2_Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32679500845056
+    m_Key: Lost_retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33142593949696
+    m_Key: Lose_Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33779343822848
+    m_Key: Win_Wintext
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34038522449920
+    m_Key: Win_Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34634763735040
+    m_Key: Outer1_Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34959574831104
+    m_Key: Outer1_Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35390132719616
+    m_Key: Outer1_Ammo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35624585924608
+    m_Key: Outer1_Health
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 237293623881761115
+  references:
+    version: 2
+    RefIds:
+    - rid: 237293623881761115
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1710396879422
