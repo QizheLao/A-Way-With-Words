@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3356828}
   - component: {fileID: 2320152}
   - component: {fileID: 6464226}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wood_bridge_start_sloped
   m_TagString: Untagged
   m_Icon: {fileID: 0}

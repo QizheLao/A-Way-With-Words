@@ -191,7 +191,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.50000036
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.7
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -330,7 +330,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBody: {fileID: 1579760750481106578}
-  sens: 100
 --- !u!1 &3384373286622605945
 GameObject:
   m_ObjectHideFlags: 0
