@@ -25,13 +25,13 @@ public class Words : MonoBehaviour
                 Destroy(gameObject);
                 if (collectedWords >= 5)
                 {
-                    if (!Level2)
+                    if (Level2)
                     {
-                        SceneManager.LoadScene("OuterDemo");
+                        SceneManager.LoadScene("Level2Outer");
                     }
                     else
                     {
-                        SceneManager.LoadScene("Level2Outer");
+                        SceneManager.LoadScene("OuterDemo");
                     }
                 }
             }
