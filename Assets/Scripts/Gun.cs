@@ -73,6 +73,7 @@ public class Gun : MonoBehaviour
 
     private void Shoot()
     {
+        GameObject.Find("GunSFX").GetComponent<GunSFX>().playfire();
         readyToShoot = false;
 
         attackPoint.rotation = cam.rotation;
@@ -144,6 +145,7 @@ public class Gun : MonoBehaviour
     }
     private void ReloadFinished()
     {
+        GameObject.Find("GunSFX").GetComponent<GunSFX>().playreload();
         //Fill magazine
         bulletsLeft = magazineSize;
         reloading = false;

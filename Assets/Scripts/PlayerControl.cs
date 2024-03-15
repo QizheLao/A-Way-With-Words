@@ -33,7 +33,11 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
+        var wasGrounded = isGrounded;
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer);
+        if(!wasGrounded && isGrounded) {
+            GameObject.Find("WalkSFX").GetComponent<WalkSFX>().playland();
+        }
 
         if (isGrounded && velocity.y < 0)
         {
@@ -46,10 +50,15 @@ public class PlayerControl : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
+        if(move != Vector3.zero && isGrounded) {
+            GameObject.Find("WalkSFX").GetComponent<WalkSFX>().playstep();
+        }
+
         controller.Move(move * currentSpeed * Time.deltaTime);
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+            GameObject.Find("WalkSFX").GetComponent<WalkSFX>().playjump();
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
         }
 

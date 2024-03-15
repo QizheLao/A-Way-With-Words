@@ -47,6 +47,7 @@ public class Bullet : MonoBehaviour
         //Instantiate explosion
         if (explosion != null) 
         {
+            GameObject.Find("ExplosionSFX").GetComponent<ExplosionSFX>().playboom();
             GameObject explosions = Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(explosions, 1.5f);
         }

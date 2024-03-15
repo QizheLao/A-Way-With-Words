@@ -40,7 +40,7 @@ public class MainMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         isPaused = false;
-        if(Scene == "Level1Inner")
+        if(Scene == "InnerDemo")
         {
             PlayerControl.health = 100;
         }
