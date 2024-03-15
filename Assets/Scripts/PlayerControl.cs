@@ -85,10 +85,12 @@ public class PlayerControl : MonoBehaviour
     {
         if (heal)
         {
+            GameObject.Find("BookSFX").GetComponent<BookSFX>().playheal();
             health += amount;
         }
         else
         {
+            GameObject.Find("HurtSFX").GetComponent<HurtSFX>().playhit();
             health -= amount;
             if (health <= 0)
             {

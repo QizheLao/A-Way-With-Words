@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/OuterDemo.unity
     guid: e9cdb0cf8e6ab2645be42b05b75849f0
   - enabled: 1
-    path: Assets/Scenes/Level1Inner.unity
+    path: Assets/Scenes/InnerDemo.unity
     guid: fc2c236c93def1747a17db704bc9e492
   - enabled: 1
     path: Assets/Scenes/Credits.unity
