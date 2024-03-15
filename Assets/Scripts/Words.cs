@@ -29,6 +29,7 @@ public class Words : MonoBehaviour
             }
             else
             {
+                GameObject.Find("BookSFX").GetComponent<BookSFX>().playget();
                 collectedWords++;
                 //Debug.Log("Words Collected: " + collectedWords);
                 wordText.text = ("Words: " + collectedWords + "/5");
